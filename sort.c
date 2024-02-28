@@ -14,38 +14,106 @@
 #include "menuBubblesort.h"
 
 int main() {
-    int choice;
+    int choice,choiceIN,choiceINN;
     do {
         printf("\nMenu:\n");
-		printf("1. Rank by Name\n");
-		printf("2. Rank by Final Score\n");
-		printf("3. Input Student's Data\n");
-		printf("4. Rank by Name Descend\n");
-		printf("5. Rank by Final Score Descend\n");
-		printf("6: User's Guide\n");
-		printf("7: Search Current Data\n");
-		printf("8: Edit Current Data\n");
-		printf("9: Search by Range\n");
-		printf("10: Exit Program\n");
+		printf("1. Rank Students\n");
+		printf("2. Input Student's Data\n");
+		printf("3. Search And Edit Student's Data'\n");
+		printf("4: User's Guide\n");
+		printf("5: Exit Program\n");
 
 
         
         printf("Enter your choice (0 for clear): ");
         scanf("%d", &choice);
-
+	
         switch (choice) {
         	case 0:
         		system("cls");
         		break;
             case 1:
-                kalkulasi(1);
+            	printf("Choose The Method: \n");
+            	printf("1.  By Name\n");
+            	printf("2.  By Final Score\n");
+            	printf("3.  Back to Menu\n");
+            	
+            	scanf("%d",&choiceIN);
+            	switch (choiceIN){
+            		case 1:
+	            		printf("Choose The Method: \n");
+		            	printf("1.  Ascending Order\n");
+		            	printf("2.  Descending Order\n");
+		            	printf("3.  Back to Menu\n");
+		            	
+		            	scanf("%d",&choiceIN);
+		            	switch (choiceIN){
+		            		case 1:
+		            			kalkulasi(1);
+		            			break;
+		            		case 2:
+		            			kalkulasi(5);
+		            			break;
+		            		case 3:
+		            			system("cls");
+		            			break;
+		            		default:
+		            			printf("Invalid choice. Please enter a valid option.\n");
+						}
+		                break;
+            		case 2:
+            			printf("Choose The Method: \n");
+		            	printf("1.  Ascending Order\n");
+		            	printf("2.  Descending Order\n");
+		            	printf("3.  Back to Menu\n");
+		            	
+		            	scanf("%d",&choiceIN);
+		            	switch (choiceIN){
+		            		case 1:
+		            			kalkulasi(2);
+		            			break;
+		            		case 2:
+		            			kalkulasi(4);
+		            			break;
+		            		case 3:
+		            			system("cls");
+		            			break;
+		            		default:
+		            			printf("Invalid choice. Please enter a valid option.\n");
+						}
+            			
+            		case 3:
+            			system("cls");
+            			break;
+            		default:
+            			printf("Invalid choice. Please enter a valid option.\n");
+				}
                 break;
             case 2:
-                kalkulasi(2);
-                break;
-            case 3:
                 kalkulasi(3);
                 break;
+            case 3:
+            	printf("\n Choose The Method: \n");
+            	printf("1.  Search By Status\n");
+            	printf("2.  Search And Edit Student's Data\n");
+            	printf("3.  Search By Final Score's Range'\n");
+            	printf("4.  Back\n");
+            	scanf("%d",&choiceIN);
+            	switch(choiceIN){
+            		case 1:
+            			kalkulasi(7);
+            			break;
+            		case 2:
+            			kalkulasi(8);
+            			break;
+            		case 3:
+            			kalkulasi(9);
+            			break;
+            		case 4:
+            			system("cls");
+            			break;
+				}
+				break;
             case 4:
             	kalkulasi(4);
                 break;

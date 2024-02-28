@@ -13,7 +13,7 @@ float nilaiUTS[MAX_MAHASISWA];
 float nilaiUAS[MAX_MAHASISWA];
 char status[MAX_MAHASISWA][15];
 int z;
-void printRankedMhs(float finalScores[], char status[][15], int n, int sortingOrder) {
+void printRankedMhs(float finalScores[], char status[][15], char namaMahasiswa[][50], int n, int sortingOrder) {
     // Create a temporary array to store the indices of students
     int indices[MAX_MAHASISWA];
     int i, j;
@@ -27,11 +27,11 @@ void printRankedMhs(float finalScores[], char status[][15], int n, int sortingOr
             int currIndex = indices[j];
             int nextIndex = indices[j + 1];
 
-            // Compare names if sorting by names (sortingOrder == 1)
+            // Compare names if sorting by names (sortingOrder <= 2)
             // Use strcmp for string comparison
-            if ((sortingOrder == 1 && strcmp(namaMahasiswa[currIndex], namaMahasiswa[nextIndex]) > 0) ||
-                // Compare final scores if sorting by scores (sortingOrder == 2)
-                (sortingOrder == 2 && finalScores[currIndex] < finalScores[nextIndex])) {
+            if ((sortingOrder <= 2 && strcmp(namaMahasiswa[currIndex], namaMahasiswa[nextIndex]) > 0) ||
+                // Compare final scores if sorting by scores (sortingOrder > 2)
+                (sortingOrder > 2 && finalScores[currIndex] < finalScores[nextIndex])) {
                 // Swap indices
                 int tempIndex = indices[j];
                 indices[j] = indices[j + 1];
@@ -40,27 +40,25 @@ void printRankedMhs(float finalScores[], char status[][15], int n, int sortingOr
         }
     }
 
-			// Print the sorted ranked students
-	printf("Rank | Name         | Final Score | Status\n");
-	printf("-----------------------------------------\n");
-	if (sortingOrder == 1) {
-	    for (i = 0; i < n; i++) {
-	        int index = indices[i];
-	        if (strcmp(namaMahasiswa[index], "") != 0) {
-	            printf("%-4d | %-12s | %-8.2f | %s\n", i-2, namaMahasiswa[index], finalScores[index], status[index]);
-	        }
-	    }
-	} else {
-	    for (i = 0; i < n; i++) {
-	        int index = indices[i];
-	        if (strcmp(namaMahasiswa[index], "") != 0) {
-	            printf("%-4d | %-12s | %-8.2f | %s\n", i+1, namaMahasiswa[index], finalScores[index], status[index]);
-	        }
-	    }
-	}
-
+    // Print the sorted ranked students
+    printf("Rank | Name         | Final Score | Status\n");
+    printf("-----------------------------------------\n");
+    if (sortingOrder == 1 || sortingOrder == 3) { // Ascending order
+        for (i = 0; i < n; i++) {
+            int index = indices[i];
+            if (strcmp(namaMahasiswa[index], "") != 0) {
+                printf("%-4d | %-12s | %-8.2f | %s\n", i + 1, namaMahasiswa[index], finalScores[index], status[index]);
+            }
+        }
+    } else { // Descending order
+        for (i = n - 1; i >= 0; i--) {
+            int index = indices[i];
+            if (strcmp(namaMahasiswa[index], "") != 0) {
+                printf("%-4d | %-12s | %-8.2f | %s\n", n - i, namaMahasiswa[index], finalScores[index], status[index]);
+            }
+        }
+    }
 }
-
 
 int searchMahasiswa(char searchName[]) {
     int i;

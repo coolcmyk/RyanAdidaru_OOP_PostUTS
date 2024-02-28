@@ -72,24 +72,24 @@ void kalkulasi(int sortingMethod) {
     system("cls");
     switch (sortingMethod) {
         case 1:
-            printRankedMhs(nilaiAkhir, status, MAX_MAHASISWA, 1); // Sorting by names in ascending order
+            printRankedMhs(nilaiAkhir, status, namaMahasiswa, MAX_MAHASISWA, 1); // Sorting by names in ascending order
             break;
         case 2:
-            printRankedMhs(nilaiAkhir, status, MAX_MAHASISWA, 2); // Sorting by final scores in descending order
+            printRankedMhs(nilaiAkhir, status, namaMahasiswa, MAX_MAHASISWA, 3); // Sorting by final scores in ascending order
             break;
         case 3:
             inputDataMahasiswa();
             break;
         case 4:
-            printRankedMhs(nilaiAkhir, status, MAX_MAHASISWA, 2); // Sorting by final scores in descending order
+            printRankedMhs(nilaiAkhir, status, namaMahasiswa, MAX_MAHASISWA, 4); // Sorting by final scores in descending order
             break;
         case 5:
-            printRankedMhs(nilaiAkhir, status, MAX_MAHASISWA, 1); // Sorting by names in ascending order
+            printRankedMhs(nilaiAkhir, status, namaMahasiswa, MAX_MAHASISWA, 2); // Sorting by names in descending order
             break;
        case 7:
 		    {
 		        int choice;
-		        printf("Enter 1 to search for Mahasiswa with 'Lulus' status or any other number to search for Mahasiswa with status other than 'Lulus': ");
+		        printf("Enter 1 to search for Mahasiswa with 'Lulus' status or any other number to search for Mahasiswa with status of 'Tidak Lulus': ");
 		        scanf("%d", &choice);
 		        searchByStatus(choice, nilaiAkhir);
 		        break;
