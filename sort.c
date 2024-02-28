@@ -19,7 +19,7 @@ int main() {
         printf("\nMenu:\n");
 		printf("1. Rank Students\n");
 		printf("2. Input Student's Data\n");
-		printf("3. Search And Edit Student's Data'\n");
+		printf("3. Search And Edit Student's Data\n");
 		printf("4: User's Guide\n");
 		printf("5: Exit Program\n");
 
@@ -81,7 +81,7 @@ int main() {
 		            		default:
 		            			printf("Invalid choice. Please enter a valid option.\n");
 						}
-            			
+            			break;
             		case 3:
             			system("cls");
             			break;
@@ -114,35 +114,20 @@ int main() {
             			break;
 				}
 				break;
-            case 4:
-            	kalkulasi(4);
-                break;
             case 5:
                 kalkulasi(5);
                 break;
-            case 6:
+            case 4:
             	printf("\nBubble Sort:\n");
                 printf("Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order.\n");
                 printf("It passes through the list until no swaps are needed, which indicates that the list is sorted.\n");
                 printf("In this program, we use bubble sort to rank students either by their names or by their final scores.\n");
                 printf("Limitation for each value in this program is 0 - 100");
                 break;
-            case 7:
-            	kalkulasi(7);
-            	break;
-            case 8:
-            	kalkulasi(8);
-            	break;
-            case 9:
-            	kalkulasi(9);
-            	break;
-            case 10:
-            	printf("Exiting Program:\n");
-            	break;
             default:
                 printf("Invalid choice. Please enter a valid option.\n");
         }
-    } while (choice != 10);
+    } while (choice != 5);
     return 0;
 }
 //Copy Paste input untuk test case dibawah   Anies 80 75 85 Prabowo 70 65 75 Ganjar 85 50 70 Teufik 60 55 70 Ryan 20 20 65

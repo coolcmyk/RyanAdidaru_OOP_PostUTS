@@ -41,20 +41,20 @@ void printRankedMhs(float finalScores[], char status[][15], char namaMahasiswa[]
     }
 
     // Print the sorted ranked students
-    printf("Rank | Name         | Final Score | Status\n");
+    printf("Name         | Final Score | Status\n");
     printf("-----------------------------------------\n");
     if (sortingOrder == 1 || sortingOrder == 3) { // Ascending order
         for (i = 0; i < n; i++) {
             int index = indices[i];
             if (strcmp(namaMahasiswa[index], "") != 0) {
-                printf("%-4d | %-12s | %-8.2f | %s\n", i + 1, namaMahasiswa[index], finalScores[index], status[index]);
+                printf("%-12s | %-8.2f | %s\n", namaMahasiswa[index], finalScores[index], status[index]);
             }
         }
     } else { // Descending order
         for (i = n - 1; i >= 0; i--) {
             int index = indices[i];
             if (strcmp(namaMahasiswa[index], "") != 0) {
-                printf("%-4d | %-12s | %-8.2f | %s\n", n - i, namaMahasiswa[index], finalScores[index], status[index]);
+                printf("%-12s | %-8.2f | %s\n", namaMahasiswa[index], finalScores[index], status[index]);
             }
         }
     }
