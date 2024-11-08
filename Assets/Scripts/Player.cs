@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    Player instance;
+    public static Player Instance;
     PlayerMovement playerMovement;
     Animator animator;
 
+
+    public bool weaponState;
+
     void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
+          
         {
-            instance = this;
+            Instance = this;
         }
         else
         {
@@ -24,6 +28,7 @@ public class Player : MonoBehaviour
     {
         playerMovement = GetComponent<PlayerMovement>();
         animator = transform.Find("Engine").Find("EngineEffect").GetComponent<Animator>();
+        weaponState = false;
     }
 
     void FixedUpdate()

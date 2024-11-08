@@ -21,6 +21,13 @@ public class PlayerMovement : MonoBehaviour
         moveVelocity = (2 * maxSpeed / (timeToFullSpeed));
         moveFriction = (-2 * maxSpeed) / (timeToFullSpeed * timeToFullSpeed);
         stopFriction = (-2 * maxSpeed) / (timeToStop * timeToStop);
+
+        /*leftBottom = Camera.main.ViewportToWorldPoint(Vector2.zero);*/
+        /*rightTop   = Camera.main.ViewportToWorldPoint(Vector2.one);*/
+        /**/
+        /*spriteRenderer = GetComponent<SpriteRenderer>();*/
+        /*spriteSize     = spriteRenderer.sprite.bounds.size;*/
+        /*spriteHalfSize = spriteRenderer.sprite.bounds.extents;*/
  
     }
 
@@ -61,10 +68,10 @@ public class PlayerMovement : MonoBehaviour
  
     public void MoveBound()
     {
-        // Clamp position agar tidak keluar dari layar
+        Vector2 screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0.0f));
         transform.position = new Vector2(
-            Mathf.Clamp(transform.position.x, -10f, 10f),
-            Mathf.Clamp(transform.position.y, -10f, 10f)
+          Mathf.Clamp(transform.position.x, -screenBounds.x, screenBounds.x),
+          Mathf.Clamp(transform.position.y, -screenBounds.y, screenBounds.y)
         );
     }
 
