@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     Animator animator;
 
 
-    public bool weaponState;
+    public bool weaponState = false;
 
     void Awake()
     {

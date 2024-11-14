@@ -14,7 +14,8 @@ public class Bullet : MonoBehaviour
     private Rigidbody2D rb;
     private IObjectPool<Bullet> pool;
 
-    [SerializeField] bool isEnemy = false;
+    private Player player;
+    [SerializeField] bool isEnemy;
 
     void Awake()
     {
@@ -24,6 +25,7 @@ public class Bullet : MonoBehaviour
             isEnemy = true;
         }
         rb = GetComponent<Rigidbody2D>();
+        player = GetComponent<Player>();
     }
 
     void Update()
@@ -49,6 +51,7 @@ public class Bullet : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
+        player.weaponState = true;
         ReturnToPool();
     }
 

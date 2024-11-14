@@ -143,10 +143,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1422103801792575361}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12c716eec25a9ad40bc83d4bf29bf7e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 29fd267f5735ad047b6e71db9cce45a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animatorScene: {fileID: 6116544307123480868}
+  currentLevel: 1
 --- !u!1 &1580090951487045626
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,10 +234,10 @@ Animation:
   m_GameObject: {fileID: 1580090951487045626}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: 8d6c1e04cf91759418cad22390afc9d0, type: 2}
   m_Animations: []
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!95 &6116544307123480868
@@ -249,7 +250,7 @@ Animator:
   m_GameObject: {fileID: 1580090951487045626}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8645fc52c4b3c5045a9b3eb5b982625c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 91a1c123433d80140ab1e1b812967c4f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -307,6 +308,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3501616962873292391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61b61b32bac63334498b1cdb1089708f, type: 3}
+  m_Script: {fileID: 11500000, guid: dea998e846fca654381516515fc7a25b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

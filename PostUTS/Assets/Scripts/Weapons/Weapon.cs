@@ -20,11 +20,12 @@ public class Weapon : MonoBehaviour
     private readonly int defaultCapacity = 30;
     private readonly int maxSize = 100;
     private float timer;
+    
     public Transform parentTransform;
 
     void Awake()
     {
-        objectPool = new ObjectPool<Bullet>(
+        objectPool = new ObjectPool<Bullet>(    
             CreateBullet,        
             OnGetBullet,       
             OnReleaseBullet,   
@@ -38,11 +39,24 @@ public class Weapon : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= shootIntervalInSeconds)
+
+        SpawnBullet();
+        if (Player.Instance.weaponState)
         {
-            SpawnBullet();
-            timer = 0f;
+            Debug.Log("has weapon");
+            if (timer >= shootIntervalInSeconds)
+            {
+                Debug.Log("Shoot");
+                SpawnBullet();
+                timer = 0f;
+            }
         }
+
+        else if (!Player.Instance.weaponState)
+        {
+            Debug.Log("No weapon");
+        }
+    
     }
 
     private Bullet CreateBullet()

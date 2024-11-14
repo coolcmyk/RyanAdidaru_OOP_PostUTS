@@ -607,6 +607,111 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &295684307
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2285838354570645806, guid: cd9696dfe9675ad488d16d4548d001b0, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285838354570645806, guid: cd9696dfe9675ad488d16d4548d001b0, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285838354570645806, guid: cd9696dfe9675ad488d16d4548d001b0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285838354570645806, guid: cd9696dfe9675ad488d16d4548d001b0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285838354570645806, guid: cd9696dfe9675ad488d16d4548d001b0, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285838354570645806, guid: cd9696dfe9675ad488d16d4548d001b0, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285838354570645806, guid: cd9696dfe9675ad488d16d4548d001b0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285838354570645806, guid: cd9696dfe9675ad488d16d4548d001b0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285838354570645806, guid: cd9696dfe9675ad488d16d4548d001b0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285838354570645806, guid: cd9696dfe9675ad488d16d4548d001b0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285838354570645806, guid: cd9696dfe9675ad488d16d4548d001b0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.512331
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285838354570645806, guid: cd9696dfe9675ad488d16d4548d001b0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285838354570645806, guid: cd9696dfe9675ad488d16d4548d001b0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285838354570645806, guid: cd9696dfe9675ad488d16d4548d001b0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285838354570645806, guid: cd9696dfe9675ad488d16d4548d001b0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285838354570645806, guid: cd9696dfe9675ad488d16d4548d001b0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.5768955
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285838354570645806, guid: cd9696dfe9675ad488d16d4548d001b0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.5271604
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285838354570645806, guid: cd9696dfe9675ad488d16d4548d001b0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285838354570645806, guid: cd9696dfe9675ad488d16d4548d001b0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285838354570645806, guid: cd9696dfe9675ad488d16d4548d001b0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602713049000990309, guid: cd9696dfe9675ad488d16d4548d001b0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2602713049000990309, guid: cd9696dfe9675ad488d16d4548d001b0, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501616962873292391, guid: cd9696dfe9675ad488d16d4548d001b0, type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cd9696dfe9675ad488d16d4548d001b0, type: 3}
 --- !u!1 &314134201
 GameObject:
   m_ObjectHideFlags: 0
@@ -2205,15 +2310,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2873216266101088806, guid: 4cff116e380de654ebd7b30a9ab47797, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7d6d0f7ce3902ea48a2d435fa0c15558, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.38, y: 0.33}
+  m_Size: {x: 0.96, y: 0.96}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1078761503
@@ -2225,9 +2330,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1078761500}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b13366c12a229544a0be72903b541c6, type: 3}
+  m_Script: {fileID: 11500000, guid: b1e0d55dee6cd9948950a135cc5a2f1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
+  rotateSpeed: 2
 --- !u!61 &1078761504
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2263,9 +2370,9 @@ BoxCollider2D:
   m_Offset: {x: 0.000000014901161, y: 0.475}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.49999994, y: -0.93939394}
-    oldSize: {x: 0.38, y: 0.33}
-    newSize: {x: 0.38, y: 0.33}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.96, y: 0.96}
+    newSize: {x: 0.96, y: 0.96}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -3748,3 +3855,4 @@ SceneRoots:
   - {fileID: 7330154073510199622}
   - {fileID: 197497432}
   - {fileID: 601054228}
+  - {fileID: 295684307}
