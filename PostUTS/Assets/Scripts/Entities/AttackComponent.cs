@@ -15,7 +15,28 @@ public class AttackComponent : MonoBehaviour
             return;
         }
 
-        HitboxComponent hitbox = other.GetComponent<HitboxComponent>();
+        // HitboxComponent hitbox = other.GetComponent<HitboxComponent>();
+        // if (hitbox != null)
+        // {
+        //     hitbox.Damage(damage);
+        // }
+
+        if (other.TryGetComponent<HitboxComponent>(out var hitbox))
+        {
+            if (other.TryGetComponent<InvincibilityComponent>(out var invincibilityComponent))
+            {
+                invincibilityComponent.StartInvincibility();
+            }
+            else
+            {
+                hitbox.Damage(damage);
+            }
+        }
+    }
+
+    public void DealDamage(GameObject target)
+    {
+        HitboxComponent hitbox = target.GetComponent<HitboxComponent>();
         if (hitbox != null)
         {
             hitbox.Damage(damage);

@@ -22,6 +22,7 @@ public class Weapon : MonoBehaviour
     private float timer;
     
     public Transform parentTransform;
+    private bool isEnemy;
 
     void Awake()
     {
@@ -34,13 +35,13 @@ public class Weapon : MonoBehaviour
             defaultCapacity,     
             maxSize
         );
+        isEnemy = gameObject.tag == "Enemy";
     }
 
     void Update()
     {
         timer += Time.deltaTime;
 
-        SpawnBullet();
         if (Player.Instance.weaponState)
         {
             Debug.Log("has weapon");
@@ -52,9 +53,14 @@ public class Weapon : MonoBehaviour
             }
         }
 
-        else if (!Player.Instance.weaponState)
+        else if (isEnemy)
         {
-            Debug.Log("No weapon");
+            if (timer >= shootIntervalInSeconds)
+            {
+                Debug.Log("Shoot");
+                SpawnBullet();
+                timer = 0f;
+            }
         }
     
     }

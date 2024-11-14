@@ -10,7 +10,6 @@ public class Bullet : MonoBehaviour
     [Header("Bullet Stats")]
     
     public float bulletSpeed = 20f;
-    public int damage = 10;
     private Rigidbody2D rb;
     private IObjectPool<Bullet> pool;
 
@@ -44,7 +43,7 @@ public class Bullet : MonoBehaviour
 
     private void CheckBoundaries()
     {
-        if (transform.position.y >= 10f)
+        if (transform.position.y >= 5f)
         {
             ReturnToPool();
         }

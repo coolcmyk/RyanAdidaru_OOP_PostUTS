@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootIntervalInSeconds: 0.1
-  bullet: {fileID: 8745958112440231281}
+  bullet: {fileID: 0}
   bulletSpawnPoint: {fileID: 3875109877571372632}
   parentTransform: {fileID: 0}
 --- !u!1001 &7679186636422842881
@@ -175,9 +175,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1131791358307594187, guid: 8456c47bce7e46e46a174850d3c489e4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8745958112440231281}
-    - targetCorrespondingSourceObject: {fileID: 1131791358307594187, guid: 8456c47bce7e46e46a174850d3c489e4, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 988303460885383158}
   m_SourcePrefab: {fileID: 100100000, guid: 8456c47bce7e46e46a174850d3c489e4, type: 3}
 --- !u!4 &3442863785225645388 stripped
@@ -190,21 +187,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1131791358307594187, guid: 8456c47bce7e46e46a174850d3c489e4, type: 3}
   m_PrefabInstance: {fileID: 7679186636422842881}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8745958112440231281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7288264218622485962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad07141ea94bb6b4f85b84810d7e4ede, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpeed: 20
-  damage: 10
-  isEnemy: 0
 --- !u!114 &988303460885383158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,5 +199,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93715982e0ea0b4882ae11da681c373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8745958112440231281}
+  bulletPrefab: {fileID: 0}
   damage: 0
