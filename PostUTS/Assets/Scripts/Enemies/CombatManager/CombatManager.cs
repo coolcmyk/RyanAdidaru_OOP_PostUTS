@@ -15,7 +15,6 @@ public class CombatManager : MonoBehaviour
 
     private void Update()
     {
-        // Manage wave timing and progression
         timer += Time.deltaTime;
 
         if (timer >= waveInterval && totalEnemies <= 0)
@@ -26,7 +25,6 @@ public class CombatManager : MonoBehaviour
 
     private void StartWave()
     {
-        // Reset timer and start spawning enemies for all spawners
         timer = 0;
         totalEnemies = 0;
 
@@ -39,19 +37,13 @@ public class CombatManager : MonoBehaviour
 
     private void NextWave()
     {
-        // Increment wave number
         waveNumber++;
-
-        // Start next wave
         StartWave();
     }
 
     public void OnEnemyDestroyed()
     {
-        // Decrement total enemies when an enemy is destroyed
         totalEnemies--;
-
-        // Optional: Check if wave is complete
         if (totalEnemies <= 0)
         {
             NextWave();
