@@ -36,7 +36,10 @@ using UnityEngine;
 
 public class HealthComponent : MonoBehaviour
 {
-    [SerializeField] private int _maxHealth;
+
+    public delegate void EnemyDestroyedHandler(GameObject DestroyedObject);
+    public static event EnemyDestroyedHandler OnEnemyDestroyed;
+    [SerializeField] public int _maxHealth;
     public int maxHealth
     {
         get { return _maxHealth; }
@@ -50,6 +53,11 @@ public class HealthComponent : MonoBehaviour
         private set { _health = Mathf.Clamp(value, 0, maxHealth); }
     }
 
+
+    public int GetHealth()
+    {
+        return _health;
+    }
     public void Initialize(int maxHealth)
     {
         this.maxHealth = maxHealth;
@@ -63,6 +71,11 @@ public class HealthComponent : MonoBehaviour
         if (_health <= 0)
         {
             Destroy(gameObject);
+            if (gameObject.tag == "Enemy")
+            {
+                OnEnemyDestroyed?.Invoke(gameObject);
+            }
         }
     }
+
 }

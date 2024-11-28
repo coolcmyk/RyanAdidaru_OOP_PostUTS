@@ -1,52 +1,52 @@
+using System.Collections;
 using UnityEngine;
 
 public class CombatManager : MonoBehaviour
 {
     public EnemySpawner[] enemySpawners;
+
     public float timer = 0;
     [SerializeField] private float waveInterval = 5f;
+
     public int waveNumber = 1;
+
     public int totalEnemies = 0;
+    public int points = 0;
 
-    private void Start()
+    private void OnEnable()
     {
-        StartWave();
-    }
-
-    private void Update()
-    {
-        timer += Time.deltaTime;
-
-        if (timer >= waveInterval && totalEnemies <= 0)
-        {
-            NextWave();
-        }
-    }
-
-    private void StartWave()
-    {
-        timer = 0;
-        totalEnemies = 0;
-
         foreach (EnemySpawner spawner in enemySpawners)
         {
-            spawner.ResetSpawner();
-            spawner.StartSpawning();
+            spawner.combatManager = this;
         }
     }
 
-    private void NextWave()
+    private void FixedUpdate()
     {
-        waveNumber++;
-        StartWave();
+        if (totalEnemies == 0)
+            timer += Time.deltaTime;
+
+        if (timer >= waveInterval)
+        {
+            foreach (EnemySpawner spawner in enemySpawners)
+            {
+                if (spawner.spawnedEnemy.GetLevel() <= waveNumber && !spawner.isSpawning)
+                {
+                    spawner.ResetSpawnCount();
+
+                    totalEnemies += spawner.spawnCount;
+
+                    spawner.SpawnEnemy();
+                }
+            }
+
+            waveNumber++;
+            timer = 0;
+        }
     }
 
-    public void OnEnemyDestroyed()
+    public void IncreaseKill()
     {
         totalEnemies--;
-        if (totalEnemies <= 0)
-        {
-            NextWave();
-        }
     }
 }

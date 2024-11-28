@@ -13,6 +13,8 @@ public class Bullet : MonoBehaviour
     private Rigidbody2D rb;
     private IObjectPool<Bullet> pool;
 
+    public int damage = 10;
+
     private Player player;
     [SerializeField] bool isEnemy;
 
@@ -51,6 +53,11 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         player.weaponState = true;
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            other.gameObject.GetComponent<HitboxComponent>().Damage(damage);
+            ReturnToPool();
+        }
         ReturnToPool();
     }
 

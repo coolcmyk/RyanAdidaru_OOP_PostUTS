@@ -27,66 +27,48 @@ public class EnemySpawner : MonoBehaviour
         spawnCount = defaultSpawnCount;
     }
 
-    public void StartSpawning()
+    public void SpawnEnemy()
     {
-        if (!isSpawning)
-        {
-            isSpawning = true;
-            StartCoroutine(SpawnEnemies());
-        }
+        StartCoroutine(IESpawnEnemy());
     }
 
-    public void StopSpawning()
+    IEnumerator IESpawnEnemy()
     {
-        isSpawning = false;
-        StopAllCoroutines();
-    }
+        isSpawning = true;
 
-    private IEnumerator SpawnEnemies()
-    {
-        while (isSpawning)
+        while (spawnCount > 0)
         {
-            for (int i = 0; i < spawnCount; i++)
-            {
-                SpawnEnemy();
-            }
+            Enemy s = Instantiate(spawnedEnemy);
+
+            s.transform.parent = gameObject.transform;
+
+            s.enemyKilledEvent.AddListener(KillEnemy);
+            s.enemyKilledEvent.AddListener(combatManager.IncreaseKill);
+
+            spawnCount--;
 
             yield return new WaitForSeconds(spawnInterval);
         }
+
+        isSpawning = false;
     }
 
-    private void SpawnEnemy()
+    public void ResetSpawnCount()
     {
-        if (spawnedEnemy != null)
-        {
-            Instantiate(spawnedEnemy, transform.position, Quaternion.identity);
-            combatManager.totalEnemies++;
-        }
-    }
-
-    public void OnEnemyKilled()
-    {
-        totalKill++;
-        totalKillWave++;
         if (totalKillWave >= minimumKillsToIncreaseSpawnCount)
         {
-            SpawnCountIncrease();
+            spawnCountMultiplier += multiplierIncreaseCount;
+            minimumKillsToIncreaseSpawnCount *= spawnCountMultiplier;
             totalKillWave = 0;
         }
-    }
 
-    private void SpawnCountIncrease()
-    {
-        spawnCountMultiplier += multiplierIncreaseCount;
         spawnCount = defaultSpawnCount * spawnCountMultiplier;
     }
 
-    public void ResetSpawner()
+    private void KillEnemy()
     {
-        totalKill = 0;
-        totalKillWave = 0;
-        spawnCount = defaultSpawnCount;
-        spawnCountMultiplier = 1;
-        isSpawning = false;
+        totalKill++;
+        totalKillWave++;
+        combatManager.points += spawnedEnemy.GetLevel();
     }
 }
